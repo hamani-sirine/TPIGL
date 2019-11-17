@@ -1,2 +1,2 @@
 # TPIGL
-Application web de scolarité
+Une application web de scolarité.
