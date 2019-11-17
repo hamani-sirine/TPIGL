@@ -1,2 +1,2 @@
 # TPIGL
-Une application web de scolarité.
+Une application web de scolarité, réalisée par des etudiants.
