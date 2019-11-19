@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('nom');
             $table->string('prenom');
             $table->string('fonction');
-            $table->bigInteger('id');
+            $table->bigInteger('id')->nullable();
             
         });
     }
