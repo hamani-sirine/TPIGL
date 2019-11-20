@@ -11,8 +11,13 @@
 |
 */
 
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/notes/{id}','NoteController@index')->name('index');
+
+
 
