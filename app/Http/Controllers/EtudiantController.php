@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use illuminate\html;
 use App\User;
+use App\Etudiant;
 use DB;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -14,21 +15,32 @@ class EtudiantController extends Controller
 
     public function create()
     {
-        return view('Student.add');
+        return view('Student.etud');
     }
 
-    public function insérer_Etud(Request $request)
+    public function Ajouter_etudiant(Request $request)
     {
             $user=new User();
-            $user->login=$request->input('login');;
+            $user->login=$request->input('login');
             $user->email=$request->input('email');
             $user->mdp= $mdp=$request->input('mdp');
             $user->nom= $nom=$request->input('nom');
             $user->prenom=$prenom=$request->input('prenom');
-            $user->fonction= $fonction=$request->input('fonction');
+            $user->fonction='étudiant';
             $user->save();
-            getData();
-            echo "successful !";   
+           // getData();
+            $etud=new Etudiant();
+            $etud->id_user=$user->id;
+            $etud->promo=$request->input('promo');
+            $etud->groupe=$request->input('groupe');
+            $etud->option=$request->input('option');
+            $etud->save();
+
+            $usr=DB::table('user')->where('id_user',$etud->id_user)->first();
+            $usr->id=$etud->id_etud;
+            $usr->save();
+           
+            echo "successful !";
     }
 
     //affichage
@@ -41,7 +53,7 @@ class EtudiantController extends Controller
        }
        else
        {
-        return ('Student.view');
+           return ('Student.view');
        }
     }
 
