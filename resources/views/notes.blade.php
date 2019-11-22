@@ -8,7 +8,12 @@
     <title>Document</title>
 </head>
 <body>
-<h1>{{$user->login}} {{$etudiant->promo}} G0{{$etudiant->groupe}}</h1>
+    @if ($user != null )
+    @if ($etudiant == null)
+    <h1>{{$user->login}} </h1>
+    <p>Aucune note à afficher</p>
+    @else
+    <h1>{{$user->login}} {{$etudiant->promo}} G0{{$etudiant->groupe}}</h1>
     <h3>Semestre 1 </h3>
     
     <ul>
@@ -38,5 +43,11 @@
     </li>
     @endfor
     </ul>
+    @endif
+   
+    @else
+        <p> Cet utilisateur n'existe pas <p>
+    @endif
+
 </body>
 </html>

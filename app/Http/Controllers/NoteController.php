@@ -14,11 +14,19 @@ class NoteController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index($id)
-    {   $i1=0;$i2=0;
-        $etud=DB::table('etudiant')->where('id_etud',$id)->first();
-        $user=DB::table('user')->where('id_user',$etud->id_user)->first();
-
-        $notes = DB::table('note')->where('id_etud',$id)->get();
+    {
+         $i1=0;$i2=0;
+         $etud=null;
+         $notes_s1=null;
+         $notes_s2=null;
+         $modules_s1=null;
+         $modules_s2=null;
+        $user=DB::table('user')->where('id_user',$id)->first();
+        if ($user != null ){
+            
+        $etud=DB::table('etudiant')->where('id_user',$id)->first();
+       if ($etud != null ){
+        $notes = DB::table('note')->where('id_etud',$etud->id_etud)->get();
         foreach ($notes as $note){
             $id_module=$note->id_module;
             $module=DB::table('module')->where('id_module',$id_module)->first();
@@ -34,12 +42,12 @@ class NoteController extends Controller
                 }
             
         }
+    }
         
-       
+    }
         return view('notes',['notes_s1' => $notes_s1,'notes_s2' => $notes_s2,'modules_s1' => $modules_s1,'modules_s2' => $modules_s2,
                                                  'etudiant'=>$etud, 'user'=>$user  ]);
 
-       // return view('notes',['notes' => Note::all()]);
         
     }
 
