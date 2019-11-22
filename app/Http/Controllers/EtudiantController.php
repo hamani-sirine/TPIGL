@@ -36,9 +36,9 @@ class EtudiantController extends Controller
             $etud->option=$request->input('option');
             $etud->save();
 
-            $usr=DB::table('user')->where('id_user',$etud->id_user)->first();
+            /*$usr=DB::table('user')->where('id_user',$etud->id_user)->first();
             $usr->id=$etud->id_etud;
-            $usr->save();
+            $usr->save();*/
            
             echo "successful !";
     }

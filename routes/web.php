@@ -19,8 +19,8 @@ Route::get('/', function ()
 });
 
 Route::get('/etud',"EtudiantController@create");
-Route::get('/cr1',"EtudiantController@");
-Route::get('/viewst',"EtudiantController@Ajouter_etudiant");
+Route::get('/cr',"EtudiantController@Ajouter_etudiant");
+Route::get('/viewst',"EtudiantController@ViewStud");
 
 Route::get('/admin',"AdminController@create");
 Route::get('/cr2',"AdminController@Ajouter_admin");

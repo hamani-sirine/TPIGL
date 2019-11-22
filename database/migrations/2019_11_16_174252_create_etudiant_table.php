@@ -16,8 +16,8 @@ class CreateEtudiantTable extends Migration
         Schema::create('etudiant', function (Blueprint $table) {
             $table->bigIncrements('id_etud');
             $table->bigInteger('id_user');
-            $table->integer('groupe');
-            $table->string('promo');
+            $table->integer('groupe')->nullable();
+            $table->string('promo')->nullable();
             $table->string('option')->nullable();
 
         });
