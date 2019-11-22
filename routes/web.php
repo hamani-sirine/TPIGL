@@ -16,3 +16,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/add',"EtudiantController@create");
+Route::get('/cr',"EtudiantController@create_post");
+
+Route::get('/view',"EtudiantController@ViewStud");
+

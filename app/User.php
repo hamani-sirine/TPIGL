@@ -8,20 +8,21 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    //use Notifiable;
+    public $timestamps=false;
     protected $table='user';
-    protected $primaryKey = 'id_user';
+    //public $primaryKey ='id_user';
 
+   protected $fillable=['login','email','mdp','nom','prenom','fonction',];
+  // public $fillable=['nom','prenom','login'];
 
     /**
      * The attributes that should be hidden for arrays.
      *
      * @var array
      */
-    protected $hidden = [
+    protected $hidden =
+    [
         'mdp',
     ];
-
-    
-  
 }
