@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-<<<<<<< HEAD
 use illuminate\html;
 use App\User;
 use DB;
@@ -18,7 +17,7 @@ class EtudiantController extends Controller
         return view('Student.add');
     }
 
-    public function create_post(Request $request)
+    public function insérer_Etud(Request $request)
     {
             $user=new User();
             $user->login=$request->input('login');;
@@ -28,20 +27,22 @@ class EtudiantController extends Controller
             $user->prenom=$prenom=$request->input('prenom');
             $user->fonction= $fonction=$request->input('fonction');
             $user->save();
+            getData();
             echo "successful !";   
     }
+
+    //affichage
     public function ViewStud()
     {
-       $stud=User::all();
-       $arr=Array('user'=>$stud);
-       return view('Student.view',$arr); 
+       $data['data']=DB::table('user')->get();
+       if(count($data))
+       {
+           return view('Student.view',$data);
+       }
+       else
+       {
+        return ('Student.view');
+       }
     }
 
-=======
-
-class EtudiantController extends Controller
-{
- 
-   
->>>>>>> 76cf204b09574a44880bfddc0ed97d86b826a1e4
 }
