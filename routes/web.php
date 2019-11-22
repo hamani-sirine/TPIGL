@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/add',"EtudiantController@create");
+Route::get('/cr',"EtudiantController@insérer_Etud");
+
+Route::get('/view',"EtudiantController@ViewStud");
 Route::get('/notes/{id}','NoteController@index')->name('index');
 
 

@@ -3,82 +3,46 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use illuminate\html;
+use App\User;
+use DB;
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
 
 class EtudiantController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('Student.add');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function insérer_Etud(Request $request)
     {
-        //
+            $user=new User();
+            $user->login=$request->input('login');;
+            $user->email=$request->input('email');
+            $user->mdp= $mdp=$request->input('mdp');
+            $user->nom= $nom=$request->input('nom');
+            $user->prenom=$prenom=$request->input('prenom');
+            $user->fonction= $fonction=$request->input('fonction');
+            $user->save();
+            getData();
+            echo "successful !";   
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    //affichage
+    public function ViewStud()
     {
-        //
+       $data['data']=DB::table('user')->get();
+       if(count($data))
+       {
+           return view('Student.view',$data);
+       }
+       else
+       {
+        return ('Student.view');
+       }
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }
