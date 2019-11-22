@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+<<<<<<< HEAD
 use illuminate\html;
 use App\User;
 use DB;
@@ -36,4 +37,11 @@ class EtudiantController extends Controller
        return view('Student.view',$arr); 
     }
 
+=======
+
+class EtudiantController extends Controller
+{
+ 
+   
+>>>>>>> 76cf204b09574a44880bfddc0ed97d86b826a1e4
 }
