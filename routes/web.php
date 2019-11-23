@@ -13,10 +13,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () 
-{
-    return view('welcome');
-});
+///Contains web routes for the application.
 
 Route::get('/etud',"EtudiantController@create");
 Route::get('/cr',"EtudiantController@Ajouter_etudiant");
