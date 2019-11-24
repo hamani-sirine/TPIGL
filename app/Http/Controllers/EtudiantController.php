@@ -26,7 +26,7 @@ class EtudiantController extends Controller
             $user->mdp= $mdp=$request->input('mdp');
             $user->nom= $nom=$request->input('nom');
             $user->prenom=$prenom=$request->input('prenom');
-            $user->fonction='étudiant';
+            $user->fonction='etudiant';
             $user->save();
            // getData();
             $etud=new Etudiant();
@@ -35,10 +35,11 @@ class EtudiantController extends Controller
             $etud->groupe=$request->input('groupe');
             $etud->option=$request->input('option');
             $etud->save();
+            
+            User::where('id_user', $user->id)->update(array('id' => $etud->id_etud));
+            
 
-            /*$usr=DB::table('user')->where('id_user',$etud->id_user)->first();
-            $usr->id=$etud->id_etud;
-            $usr->save();*/
+            
            
             echo "successful !";
     }

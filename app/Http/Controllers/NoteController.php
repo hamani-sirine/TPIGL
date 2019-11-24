@@ -14,6 +14,7 @@ class NoteController extends Controller
      * Displays a list of school notes for the user with the corresponding $id.
      *These notes are seperated in two sections : First semester and second semestre.
      * @return \Illuminate\Http\Response
+     * @param $id User id
      */
     public function index($id)
     {
