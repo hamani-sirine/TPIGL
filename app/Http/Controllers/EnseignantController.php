@@ -17,7 +17,7 @@ class EnseignantController extends Controller
     {
         return view('User.enseignant');
     }
-}
+
 /** 
    *add a new user (enseignant) to the list of users
    *the informations about this user are extracted from a form

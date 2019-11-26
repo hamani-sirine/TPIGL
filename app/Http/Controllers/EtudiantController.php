@@ -48,7 +48,7 @@ class EtudiantController extends Controller
             echo "successful !";
     }
 
-    /**show added students
+    /**view added students
      */
     public function ViewStud()
     {
