@@ -1,19 +1,13 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+
 
 use Illuminate\Support\Facades\Route;
 
 ///Contains web routes for the application.
+///
+///Here is where we register web routes for our application. 
+///These routes are loaded by the RouteServiceProvider within a group which contains the "web" middleware group.
 
 Route::get('/etud',"EtudiantController@create");
 Route::get('/cr',"EtudiantController@Ajouter_etudiant");
@@ -26,7 +20,7 @@ Route::get('/ens',"EnseignantController@create");
 Route::get('/cr3',"EnseignantController@Ajouter_enseignant");
 
 
-Route::get('/notes/{id}','NoteController@index')->name('index');
+Route::get('/notes/{id}','NoteController@index')->name('notes');
 
 
 
