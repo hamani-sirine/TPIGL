@@ -24,6 +24,7 @@ class NoteController extends Controller
          $notes_s2=null;
          $modules_s1=null;
          $modules_s2=null;
+         $message='';
         $user=DB::table('user')->where('id_user',$id)->first();
         if ($user != null ){
             
@@ -45,11 +46,13 @@ class NoteController extends Controller
                 }
             
         }
+        $message="successful";
     }
         
-    }
+    } 
+    else{$message="failed";}
         return view('notes',['notes_s1' => $notes_s1,'notes_s2' => $notes_s2,'modules_s1' => $modules_s1,'modules_s2' => $modules_s2,
-                                                 'etudiant'=>$etud, 'user'=>$user  ]);
+                                                 'etudiant'=>$etud, 'user'=>$user ,'message'=>$message  ]);
 
         
     }
