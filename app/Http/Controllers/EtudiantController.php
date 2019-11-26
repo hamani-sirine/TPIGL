@@ -10,6 +10,12 @@ use DB;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+/** EtudiantController **/
+
+///Controller for the database table "etudiant".
+
+///this class allows you to make CRUD database operations.
+
 class EtudiantController extends Controller
 {
 
@@ -17,7 +23,10 @@ class EtudiantController extends Controller
     {
         return view('Student.etud');
     }
-
+    /** 
+      *add a new user (student) to the list of students
+       *the informations about this user are extracted from a form
+       */
     public function Ajouter_etudiant(Request $request)
     {
             $user=new User();
@@ -34,17 +43,13 @@ class EtudiantController extends Controller
             $etud->promo=$request->input('promo');
             $etud->groupe=$request->input('groupe');
             $etud->option=$request->input('option');
-            $etud->save();
-            
+            $etud->save();  
             User::where('id_user', $user->id)->update(array('id' => $etud->id_etud));
-            
-
-            
-           
             echo "successful !";
     }
 
-    //affichage
+    /**show added students
+     */
     public function ViewStud()
     {
        $data['data']=DB::table('user')->get();
