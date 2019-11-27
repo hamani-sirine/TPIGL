@@ -17,8 +17,8 @@ class AdminController extends Controller
         return view('User.admin');
     }
     /** 
-       *add a new user (admin) to the list of users
-       *the informations about this user are extracted from a form
+    *add a new user (admin) to the list of users
+    *the informations about this user are extracted from a form
     */
     
     public function Ajouter_admin(Request $request)
@@ -32,6 +32,7 @@ class AdminController extends Controller
             $user->fonction='admin';
             $user->save();
             echo "successful !"; 
+            return  response()->json($user,200);
     }
 
 }

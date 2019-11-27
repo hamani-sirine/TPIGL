@@ -25,33 +25,38 @@ class NoteController extends Controller
          $modules_s1=null;
          $modules_s2=null;
         $user=DB::table('user')->where('id_user',$id)->first();
-        if ($user != null ){
+        if ($user != null )
+    {
             
         $etud=DB::table('etudiant')->where('id_user',$id)->first();
-       if ($etud != null ){
+        if ($etud != null )
+        {
         $notes = DB::table('note')->where('id_etud',$etud->id_etud)->get();
-        foreach ($notes as $note){
+            foreach ($notes as $note)
+            {
             $id_module=$note->id_module;
             $module=DB::table('module')->where('id_module',$id_module)->first();
-            if(($module->semestre)== '1'){
-                 $notes_s1[$i1]=$note;
-                 $modules_s1[$i1]=$module->nom_module;
-                 $i1++;
-                }
-                else {
-                    $notes_s2[$i2]=$note;
-                    $modules_s2[$i2]=$module->nom_module;
-                    $i2++;
-                }
+            if(($module->semestre)== '1')
+            {
+                $notes_s1[$i1]=$note;
+                $modules_s1[$i1]=$module->nom_module;
+                $i1++;
+            }
+            else 
+            {
+                $notes_s2[$i2]=$note;
+                $modules_s2[$i2]=$module->nom_module;
+                $i2++;
+            }
             
+            }
         }
-    }
         
     }
         return view('notes',['notes_s1' => $notes_s1,'notes_s2' => $notes_s2,'modules_s1' => $modules_s1,'modules_s2' => $modules_s2,
                                                  'etudiant'=>$etud, 'user'=>$user  ]);
 
-        
+        //return  response()->json($notes,200); 
     }
 
     
