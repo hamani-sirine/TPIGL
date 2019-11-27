@@ -50,7 +50,7 @@ class EtudiantController extends Controller
             return  response()->json($etud,200);
     }
 
-    /**show added students
+    /**view added students
      */
     public function ViewStud()
     {

@@ -5,11 +5,12 @@ namespace Tests\Unit;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
+///Test class for routes.
 
 class RouteTest extends TestCase
 {
     /**
-     * A basic unit test example.
+     * This fonction tests all the web routes of the application.
      *
      * @return void
      */
