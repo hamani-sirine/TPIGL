@@ -11,11 +11,12 @@
     @if ($user != null )
     @if ($etudiant == null)
     <h1>{{$user->login}} </h1>
-    <p>Aucune note à afficher</p>
+    <p>Cet utilisateur n a pas de notes</p>
     @else
     <h1>{{$user->login}} {{$etudiant->promo}} G0{{$etudiant->groupe}}</h1>
     <h3>Semestre 1 </h3>
-    
+    @if ($notes_s1 != null)
+        
     <ul>
    
     @for ($i = 0; $i < count($notes_s1); $i++)
@@ -28,9 +29,10 @@
     </li>
     @endfor
     </ul>
-
+    @endif
     <h3>Semestre 2 </h3>
-    
+    @if ($notes_s2 != null)
+
     <ul>
    
     @for ($i = 0; $i < count($notes_s2); $i++)
@@ -43,6 +45,8 @@
     </li>
     @endfor
     </ul>
+    @endif
+
     @endif
    
     @else
