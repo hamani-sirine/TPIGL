@@ -24,9 +24,9 @@ class EtudiantController extends Controller
         return view('Student.etud');
     }
     /** 
-      *add a new user (student) to the list of students
-       *the informations about this user are extracted from a form
-       */
+    *add a new user (student) to the list of students
+    *the informations about this user are extracted from a form
+    */
     public function Ajouter_etudiant(Request $request)
     {
             $user=new User();
@@ -46,6 +46,8 @@ class EtudiantController extends Controller
             $etud->save();  
             User::where('id_user', $user->id)->update(array('id' => $etud->id_etud));
             echo "successful !";
+            return  response()->json($user,200);
+            return  response()->json($etud,200);
     }
 
     /**view added students
