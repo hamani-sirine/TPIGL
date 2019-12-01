@@ -55,13 +55,18 @@ class NoteController extends Controller
         $message="successful";
     }
         
-    else{$message="failed";}
-        return view('notes',['notes_s1' => $notes_s1,'notes_s2' => $notes_s2,'modules_s1' => $modules_s1,'modules_s2' => $modules_s2,
-                                                 'etudiant'=>$etud, 'user'=>$user ,'message'=>$message  ]);
+    else{
+        $message="failed";
+        }
+
+        $data=['notes_s1' => $notes_s1,'notes_s2' => $notes_s2,'modules_s1' => $modules_s1,'modules_s2' => $modules_s2,
+        'etudiant'=>$etud, 'user'=>$user ,'message'=>$message  ];
+
+        return $data;
 
         return  response()->json($notes,200); 
         return  response()->json($module,200); 
-        return  response()->json($etud,200); 
+        return  response()->json($etud,200);  
     }
 
     
