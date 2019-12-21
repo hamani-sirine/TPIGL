@@ -17,14 +17,10 @@ class NoteController extends Controller
      * @param $id User id
      */
     public function index($id)
-    {
-         $i1=0;$i2=0;
-         $etud=null;
-         $notes_s1=null;
-         $notes_s2=null;
-         $modules_s1=null;
-         $modules_s2=null;
-         $message='';
+    {   
+        
+         $data=NULL;
+         $i=0;
         $user=DB::table('user')->where('id_user',$id)->first();
         if ($user != null )
     {
@@ -35,32 +31,34 @@ class NoteController extends Controller
         $notes = DB::table('note')->where('id_etud',$etud->id_etud)->get();
             foreach ($notes as $note)
             {
+
             $id_module=$note->id_module;
             $module=DB::table('module')->where('id_module',$id_module)->first();
+
+            $data[$i]["module"]=$module->nom_module;
+            $data[$i]["cc"]=$note->cc;
+            $data[$i]["ci"]=$note->ci;
+            $data[$i]["cf"]=$note->cf;
+            
             if(($module->semestre)== '1')
             {
-                $notes_s1[$i1]=$note;
-                $modules_s1[$i1]=$module->nom_module;
-                $i1++;
+                $data[$i]["semestre"]=1;
             }
             else 
             {
-                $notes_s2[$i2]=$note;
-                $modules_s2[$i2]=$module->nom_module;
-                $i2++;
+                $data[$i]["semestre"]=2;
             }
-            
+            $i++;
             }
         }
-        $message="successful";
+      //  $message="successful";
     }
-        
+        /*
     else{
         $message="failed";
         }
-
-        $data=['notes_s1' => $notes_s1,'notes_s2' => $notes_s2,'modules_s1' => $modules_s1,'modules_s2' => $modules_s2,
-        'etudiant'=>$etud, 'user'=>$user ,'message'=>$message  ];
+*/
+        
 
         return $data;
 

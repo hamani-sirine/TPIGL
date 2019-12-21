@@ -8,50 +8,50 @@
     <title>Document</title>
 </head>
 <body>
-    @if ($user != null )
-    @if ($etudiant == null)
-    <h1>{{$user->login}} </h1>
-    <p>Cet utilisateur n a pas de notes</p>
-    @else
-    <h1>{{$user->login}} {{$etudiant->promo}} G0{{$etudiant->groupe}}</h1>
+    @if ($data != null )
+    
     <h3>Semestre 1 </h3>
-    @if ($notes_s1 != null)
+   
         
     <ul>
    
-    @for ($i = 0; $i < count($notes_s1); $i++)
+    @for ($i = 0; $i < count($data); $i++)
+    @if ($data[$i]["semestre"]==1)
     <li>
-            <p>nom module : {{ $modules_s1[$i] }}</p>
-            <p>note cc :{{ $notes_s1[$i]->cc }}</p>
-            <p>note ci :{{ $notes_s1[$i]->ci }}</p>
-            <p>note cf :{{ $notes_s1[$i]->cf }}</p>
+        <p>nom module : {{ $data[$i]["module"] }}</p>
+        <p>note cc :{{ $data[$i]["cc"] }}</p>
+        <p>note ci :{{ $data[$i]["ci"]  }}</p>
+        <p>note cf :{{ $data[$i]["cf"]  }}</p>
 
     </li>
+    @endif
+    
     @endfor
     </ul>
-    @endif
+   
     <h3>Semestre 2 </h3>
-    @if ($notes_s2 != null)
+  
 
     <ul>
    
-    @for ($i = 0; $i < count($notes_s2); $i++)
+    @for ($i = 0; $i < count($data); $i++)
+    @if ($data[$i]["semestre"]==2)
     <li>
-            <p>nom module : {{ $modules_s2[$i] }}</p>
-            <p>note cc :{{ $notes_s2[$i]->cc }}</p>
-            <p>note ci :{{ $notes_s2[$i]->ci }}</p>
-            <p>note cf :{{ $notes_s2[$i]->cf }}</p>
+        <p>nom module : {{ $data[$i]["module"] }}</p>
+        <p>note cc :{{ $data[$i]["cc"] }}</p>
+        <p>note ci :{{ $data[$i]["ci"]  }}</p>
+        <p>note cf :{{ $data[$i]["cf"]  }}</p>
 
     </li>
+    @endif
     @endfor
     </ul>
-    @endif
-
-    @endif
    
-    @else
-        <p> Cet utilisateur n'existe pas <p>
-    @endif
-
+       
+   @else
+       <p> Aucune note a afficher </p>
+   @endif
+   
+   
 </body>
 </html>
