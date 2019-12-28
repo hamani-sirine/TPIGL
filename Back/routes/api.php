@@ -16,6 +16,7 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 }); */
+//dsds
 
 Route::get('/etud',"EtudiantController@create");
 Route::post('/cr',"EtudiantController@Ajouter_etudiant");
@@ -24,7 +25,7 @@ Route::get('/viewst',"EtudiantController@ViewStud");
 Route::post('/admin',"AdminController@create");
 Route::post('/cr2',"AdminController@Ajouter_admin");
 
-Route::post('/ens',"EnseignantController@create");
+Route::post('/ens',"EnseignanptController@create");
 Route::post('/cr3',"EnseignantController@Ajouter_enseignant");
 
 
