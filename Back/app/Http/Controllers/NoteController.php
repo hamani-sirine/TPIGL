@@ -21,6 +21,7 @@ class NoteController extends Controller
         
          $data=NULL;
          $i=0;
+         $J=0;
         $user=DB::table('user')->where('id_user',$id)->first();
         if ($user != null )
     {
@@ -34,19 +35,25 @@ class NoteController extends Controller
 
             $id_module=$note->id_module;
             $module=DB::table('module')->where('id_module',$id_module)->first();
-
-            $data[$i]["module"]=$module->nom_module;
-            $data[$i]["cc"]=$note->cc;
-            $data[$i]["ci"]=$note->ci;
-            $data[$i]["cf"]=$note->cf;
+         
             
             if(($module->semestre)== '1')
             {
-                $data[$i]["semestre"]=1;
+              //  $data[$i]["semestre"]=1;
+                $data[0][$i]["module"]=$module->nom_module;
+                $data[0][$i]["cc"]=$note->cc;
+                $data[0][$i]["ci"]=$note->ci;
+                $data[0][$i]["cf"]=$note->cf;
+                $i++;
             }
             else 
             {
-                $data[$i]["semestre"]=2;
+              //$data[$i]["semestre"]=2;
+                $data[1][$j]["module"]=$module->nom_module;
+                $data[1][$j]["cc"]=$note->cc;
+                $data[1][$j]["ci"]=$note->ci;
+                $data[1][$j]["cf"]=$note->cf;
+                $j++;
             }
             $i++;
             }

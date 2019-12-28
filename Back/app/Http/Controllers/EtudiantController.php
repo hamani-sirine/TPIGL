@@ -47,7 +47,7 @@ class EtudiantController extends Controller
             User::where('id_user', $user->id)->update(array('id' => $etud->id_etud));
             echo "successful !";
             return  response()->json($user,200);
-            return  response()->json($etud,200);
+           
     }
 
     /**view added students
@@ -57,7 +57,8 @@ class EtudiantController extends Controller
        $data['data']=DB::table('user')->get();
        if(count($data))
        {
-           return view('Student.view',$data);
+          // return view('Student.view',$data);
+          return  response()->json($data,200); 
        }
        else
        {
