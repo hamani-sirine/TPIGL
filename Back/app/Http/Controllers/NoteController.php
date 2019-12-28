@@ -21,7 +21,7 @@ class NoteController extends Controller
         
          $data=NULL;
          $i=0;
-         $J=0;
+         $j=0;
         $user=DB::table('user')->where('id_user',$id)->first();
         if ($user != null )
     {
