@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 
-
+/** Enseignant */
 /** EnseignantController **/
 
 ///Controller for the user 'enseignant'.
