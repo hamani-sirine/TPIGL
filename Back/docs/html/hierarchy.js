@@ -20,8 +20,7 @@ var hierarchy =
     ] ],
     [ "BaseTestCase", null, [
       [ "TestCase", "class_tests_1_1_test_case.html", [
-        [ "ExampleTest", "class_tests_1_1_feature_1_1_example_test.html", null ],
-        [ "ExampleTest", "class_tests_1_1_unit_1_1_example_test.html", null ],
+        [ "AdminControllerTest", "class_tests_1_1_unit_1_1_admin_controller_test.html", null ],
         [ "NoteConrollerTest", "class_tests_1_1_unit_1_1_note_conroller_test.html", null ],
         [ "RouteTest", "class_tests_1_1_unit_1_1_route_test.html", null ]
       ] ]

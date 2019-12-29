@@ -48,11 +48,8 @@ var annotated_dup =
       [ "User", "class_app_1_1_user.html", "class_app_1_1_user" ]
     ] ],
     [ "Tests", null, [
-      [ "Feature", null, [
-        [ "ExampleTest", "class_tests_1_1_feature_1_1_example_test.html", "class_tests_1_1_feature_1_1_example_test" ]
-      ] ],
       [ "Unit", null, [
-        [ "ExampleTest", "class_tests_1_1_unit_1_1_example_test.html", "class_tests_1_1_unit_1_1_example_test" ],
+        [ "AdminControllerTest", "class_tests_1_1_unit_1_1_admin_controller_test.html", "class_tests_1_1_unit_1_1_admin_controller_test" ],
         [ "NoteConrollerTest", "class_tests_1_1_unit_1_1_note_conroller_test.html", "class_tests_1_1_unit_1_1_note_conroller_test" ],
         [ "RouteTest", "class_tests_1_1_unit_1_1_route_test.html", "class_tests_1_1_unit_1_1_route_test" ]
       ] ],

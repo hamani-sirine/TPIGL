@@ -22,8 +22,8 @@ for the JavaScript code in this file
 */
 var NAVTREE =
 [
-  [ "TPIGL", "index.html", [
-    [ "TPIGL", "md__c_1_xampp_htdocs__t_p_i_g_l-1__r_e_a_d_m_e.html", null ],
+  [ "E-School", "index.html", [
+    [ "TPIGL", "md__c_1_xampp_htdocs__t_p_i_g_l-1__back__r_e_a_d_m_e.html", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ]
     ] ],
