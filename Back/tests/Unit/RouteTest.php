@@ -14,6 +14,10 @@ class RouteTest extends TestCase
      *
      * @return void
      */
+
+       /**
+     * @runInSeparateProcess
+     */
     public function testExample()
     {  
         $response=$this->get('/ens');
@@ -30,7 +34,7 @@ class RouteTest extends TestCase
         
         $response=$this->get('/viewst');
         $response->assertStatus(200);
-
+  
         
     }
 

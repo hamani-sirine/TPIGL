@@ -3,6 +3,7 @@
 namespace Tests\Unit;
 
 use App\User;
+use Illuminate\Foundation\Testing\Assert;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Collection;
@@ -19,31 +20,29 @@ class NoteConrollerTest extends TestCase
     *
     * @return void
     */
-     
+       /**
+     * @runInSeparateProcess
+     */
    
     public function testIndex()
 	{  $i=1;
     $response = $this->call('GET', 'notes/'.$i);
-    $response->assertViewHas('message','successful');
-    $response->assertViewHas('user',DB::table('user')->where('id_user',$i)->first());
-
-
-    }
-    /**
-     * This function checks if all the parameters are NULL in the case where the record doesn't exist and the data wasn't sent to the view.
-     *
-     * @return void
-     */
-
-    public function testIndex2()
-	{  
-    $response = $this->call('GET', 'notes/1000');
-    $response->assertViewHas('message','failed');
-    $response->assertViewHas('user',NULL);
-
-
+    $response->assertJsonStructure([
+        '0'=>[
+     '*'=>[
+         'module','cc','ci','cf'
+         ],
+     ],
+        '1'=>[
+            '*'=>[
+                'module','cc','ci','cf'
+                ],
+        ],
+    ]);
+    
 
     }
+   
     
  
 

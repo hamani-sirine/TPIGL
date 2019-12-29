@@ -12,8 +12,11 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
+      /**
+     * @runInSeparateProcess
+     */
     public function testBasicTest()
-    {
-        $this->assertTrue(true);
+    {  
+        $this->assertTrue(true); 
     }
 }
