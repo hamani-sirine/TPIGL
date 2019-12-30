@@ -5,7 +5,7 @@
         <div class="row">
           <div class="col-md-4">
               <label> Occupation</label>  
-              <select v-model="user.fonction" aria-placeholder="Occupation" class="custom-select"> 
+              <select v-model="user.fonction" aria-placeholder="Occupation" name="fonction" class="custom-select"> 
               <option>Administrateur</option>
               <option>Enseignant</option>
               <option>Etudiant</option>
@@ -16,6 +16,7 @@
 
             <fg-input type="text"
                       label="Nom d'utilisateur"
+                      name="login"
                       placeholder="Nom d'utilisateur"
                       v-model="user.login">
             </fg-input>
@@ -25,6 +26,7 @@
           <div class="col-md-4">
             <fg-input type="email"
                       label="Email"
+                      name="email"
                       placeholder="Email"
                       v-model="user.email">
             </fg-input>
@@ -37,6 +39,7 @@
           <div class="col-md-6">
             <fg-input type="text"
                       label="Prénom"
+                      name="prenom"
                       placeholder="Prénom"
                       v-model="user.prenom">
             </fg-input>
@@ -46,6 +49,7 @@
           <div class="col-md-6">
             <fg-input type="text"
                       label="Nom"
+                      name="nom"
                       placeholder="Nom"
                       v-model="user.nom">
             </fg-input>
@@ -58,6 +62,7 @@
           <div class="col-md-6">
             <fg-input type="password"
                       label="Mot de passe"
+                      name="mdp"
                       placeholder="Mot de passe"
                       v-model="user.mdp">
             </fg-input>
@@ -122,7 +127,6 @@ export default {
        this.ch7= this.champVide(this.user.promo).toString();
        this.ch8= this.champVide(this.user.groupe).toString();
        this.ch9= this.champVide(this.user.option).toString();
-      alert("Your data: " + JSON.stringify(this.user));
        if(this.validEmail(this.user.email) && this.champVide(this.user.fonction) && this.champVide(this.user.login)
        && this.champVide(this.user.email)
        && this.champVide(this.user.prenom)

@@ -193,7 +193,7 @@ export default {
        this.ch8= this.champVide(this.user.groupe).toString();
        this.ch9= this.champVide(this.user.option).toString();
   
-       alert("Your data: " + JSON.stringify(this.user));
+       
 
        if(this.validEmail(this.user.email) && this.champVide(this.user.fonction) && this.champVide(this.user.login)
        && this.champVide(this.user.email)
