@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use illuminate\html;
 use App\User;
 use App\Etudiant;
-use DB;
+use Illuminate\Support\Facades\DB;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 

@@ -58,13 +58,8 @@ class NoteController extends Controller
             $i++;
             }
         }
-      //  $message="successful";
     }
-        /*
-    else{
-        $message="failed";
-        }
-*/
+        
         
 
         return $data;

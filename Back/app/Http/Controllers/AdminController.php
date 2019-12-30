@@ -31,7 +31,8 @@ class AdminController extends Controller
             $user->prenom=$prenom=$request->input('prenom');
             $user->fonction='admin';
             $user->save();
-            echo "successful !"; 
+            $message="successful";
+            return (['message'=>$message]);
             return  response()->json($user,200);
     }
 
