@@ -115,7 +115,7 @@
               <option>SIL</option>
               <option>SIT</option>
            </select><br/><br/>
-           <label  v-if="ch9==='false'" class="label-error">  Champ obligatoire  </label > 
+         
 
           </div>
         </div>
@@ -164,7 +164,7 @@ export default {
      ch2: "true" , 
      ch3 : "true",
       ch4: "true" ,
-       ch5: "true" , ch6 : "true" , ch7: "true" , ch8: "true" , ch9 : "true"
+       ch5: "true" , ch6 : "true" , ch7: "true" , ch8: "true" , 
     
     };
   },
@@ -202,7 +202,7 @@ export default {
        && this.champVide(this.user.mdp)
        && this.champVide(this.user.promo)
        && this.champVide(this.user.groupe)
-       && this.champVide(this.user.option)     )
+           )
        {
          axios.post('http://127.0.0.1:8000/api/cr',this.user) 
        }
