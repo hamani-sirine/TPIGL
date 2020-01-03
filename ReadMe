@@ -1,0 +1,14 @@
+On a quelques remarques a propos du tp : 
+
+--> les tests unitaires se trouvent dans Back/tests/Unit pour les executer il faut aller vers le répertoire ./Back et executer "php phpunit.phar" dans le terminal.
+
+--> Pour les tests automatisés on a travaillé avec laravel dusk car on avait des problemes avec l'instalaltion de selenium.
+Ils se trouvent dans Back/tests/Browser pour les executer il faut aller vers le répertoire ./Back et executer "php artisan dusk" dans le terminal ( dusk doit etre deja installé ).
+
+-->On a préparé une BDD remplit pour pouvoir tester l'application c'est le fichier "app.sql" il faut l'importer et indiquer son nom dans le fichier .env (DB_DATABASE= nom de la bdd).
+
+-->La documentation automatique se trouve dans Back/Docs/Index.html.
+
+-->Pour pouvoir tester l'application il faut avoir laravel xampp et node.js installés.
+
+-->On a implémenter les deux fonctionnalités : consulter les notes / ajouter un utilisateur et on a aussi implementer  "consulter les utilisateurs" pour pouvoir verifier le fonctionnement de la 2eme fonctionnalité.
