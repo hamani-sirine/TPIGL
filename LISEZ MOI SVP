@@ -1,4 +1,5 @@
 On a quelques remarques a propos du tp : 
+--> On a pas pu faire marcher la partie docker donc il vaut mieux tester l'application sans docker d'abord et par la suite tester la partie docker.
 
 --> les tests unitaires se trouvent dans Back/tests/Unit pour les executer il faut aller vers le répertoire ./Back et executer "php phpunit.phar" dans le terminal.
 

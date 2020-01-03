@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: '.'
+      args:
+        uid: ${UID}
+    container_name: app
+    environment:
+      - APACHE_RUN_USER=#${UID}
+      - APACHE_RUN_GROUP=#${UID}
+    volumes:
+      - .:/var/www/html
+    ports:
+      - 8000:80
+  db:
+    image: mysql:5.7
+    container_name: db
+    volumes:
+      - ./run/var:/var/lib/mysql
+      - ./run/dump/init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+      - MYSQL_USER=${DB_USERNAME}
+      - MYSQL_DB=${DB_DATABASE}
+      - MYSQL_ROOT_PASSWORD=securerootpassword
+    ports:
+      - 8080:3306
+   
